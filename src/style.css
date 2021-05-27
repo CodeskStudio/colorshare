@@ -1,0 +1,33 @@
+
+  .center {
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+  input[type="color"]{
+      display: block;
+      width: 45px;
+      float: left;
+      height: 45px;
+  }
+
+  input[type="text"] {
+      padding: 20px;
+      width: 45px;
+      height: 45px;
+      display: block;
+      float: left;
+      
+  }
+
+  input[type="text"]:invalid{
+      outline: 2px solid red;
+  }
+  
+  .sh-txt{
+      text-shadow: 2px 2px #ff0000;
+  }
