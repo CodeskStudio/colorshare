@@ -45,7 +45,7 @@ const App = () => {
       <InputGroup>
         <Input type="color" onChange={event => setColor(event.target.value)} pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color}></Input>
         <Input type="text" class="form-control" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color} />
-        <Button outline color="secondary" onClick={copyNotify}><BiShareAlt/></Button>
+        <Button class="shadow-lg sh-txt" onClick={copyNotify}><BiShareAlt/></Button>
       </InputGroup>
 
       </div>
