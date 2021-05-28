@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ColorShare",
+  "name": "ColorShare - Share that Color!",
   "icons": [
     {
       "src": "favicon.ico",
