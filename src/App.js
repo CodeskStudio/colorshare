@@ -14,9 +14,11 @@ const App = () => {
   const noCode = color.replace("#", "");
   const share = window.location.origin + '/' + noCode
 
+  /*
   const ogTitle = 'ColorShare - ' + color
   const ogDescription = 'All about ' + color
   const ogImage = 'http://www.thecolorapi.com/id?format=svg&named=false&hex=' + noCode
+  */
   
   document.body.style = 'background: ' + color + ';'  
 
@@ -57,17 +59,11 @@ const App = () => {
 
       <Helmet>
 
-        <meta property="og:type" content="website"></meta>
-
-        <title>ColorShare - {color}</title>
-        <meta property="og:title" content={ogTitle}/>
-
-        <meta name="description" content={color} />
-        <meta property="og:description" content={ogDescription}></meta>
-
-        <meta property="og:image" content={ogImage}></meta>
-        <link rel="icon" type="image/png" href={ogImage} sizes="16x16" />
-        <meta name="theme-color" content={color} />
+      <meta property="og:type" content="website"></meta>
+      <meta property="og:url" content="https://linkfork.co/"></meta>
+      <meta property="og:title" content="LinkFork | Link Preview Customization"></meta>
+      <meta property="og:description" content="LinkFork lets you shorten, and customize how your link will appear when shared on social media, for free."></meta>
+      <meta property="og:image" content="https://linkfork.co/images/poster.png"></meta>
 
       </Helmet>
 
