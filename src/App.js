@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import {Helmet} from "react-helmet";
 import { InputGroup, Input } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { BiShareAlt } from 'react-icons/bi';
@@ -49,6 +50,13 @@ const App = () => {
       </InputGroup>
 
       </div>
+
+      <Helmet>
+        <title>ColorShare - {color}</title>
+        <meta name="description" content={color} />
+        <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
+        <meta name="theme-color" content={color} />
+      </Helmet>
 
       <ToastContainer
         position="bottom-right"
