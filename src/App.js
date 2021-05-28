@@ -13,6 +13,10 @@ const App = () => {
   const [color, setColor] = React.useState(url)
   const noCode = color.replace("#", "");
   const share = window.location.origin + '/' + noCode
+
+
+  const ogTitle = 'ColorShare - ' + color
+  const ogDescription = 'All about ' + color
   
   document.body.style = 'background: ' + color + ';'  
 
@@ -53,7 +57,12 @@ const App = () => {
 
       <Helmet>
         <title>ColorShare - {color}</title>
+        <meta property="og:title" content={ogTitle}/>
+
         <meta name="description" content={color} />
+        <meta property="og:description" content={ogDescription}></meta>
+
+        <meta property="og:image" content="http://www.thecolorapi.com/id?format=svg&named=false&hex=853334"></meta>
         <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
         <meta name="theme-color" content={color} />
       </Helmet>
