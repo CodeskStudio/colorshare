@@ -12,7 +12,7 @@ const App = () => {
   const url = window.location.pathname.replace("/", "#");
   const [color, setColor] = React.useState(url)
   const noCode = color.replace("#", "");
-  const share = window.location.origin + '/' + noCode
+  const share = window.location.origin + '/' + noCode 
 
   /*
   const ogTitle = 'ColorShare - ' + color
@@ -45,6 +45,8 @@ const App = () => {
   return (
     <>
       <div class="center">
+
+        <h1 class="text-white shadow-lg sh-txt" className="display-3">ColorShare</h1>
 
         <h1 class="text-white shadow-lg sh-txt">{color}</h1>  
         <ColorName />
