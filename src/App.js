@@ -1,24 +1,26 @@
 import React from 'react';
 import './style.css';
-import {Helmet} from "react-helmet";
 import { InputGroup, Input } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { BiShareAlt } from 'react-icons/bi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import converter from 'color-convert';
 
 const App = () => {
 
   const url = window.location.pathname.replace("/", "#");
   const [color, setColor] = React.useState(url)
   const noCode = color.replace("#", "");
-  const share = window.location.origin + '/' + noCode 
+  const share = window.location.origin + '/' + noCode
 
-  /*
-  const ogTitle = 'ColorShare - ' + color
-  const ogDescription = 'All about ' + color
-  const ogImage = 'http://www.thecolorapi.com/id?format=svg&named=false&hex=' + noCode
-  */
+  const colorhex = color;
+  const colorrgb = converter.hex.rgb(colorhex);
+  const colorhsl = converter.hex.hsl(colorhex);
+  const colorhsv = converter.hex.hsv(colorhex);
+  const colorcmyk = converter.hex.cmyk(colorhex);
+  const colorhwb = converter.hex.hwb(colorhex);
+  const colorlab = converter.hex.lab(colorhex);
   
   document.body.style = 'background: ' + color + ';'  
 
@@ -57,17 +59,15 @@ const App = () => {
         <Button class="shadow-lg sh-txt" onClick={copyNotify}><BiShareAlt/></Button>
       </InputGroup>
 
+      <h2>Color Converter</h2>
+      <h3>rgb {colorrgb}</h3>
+      <h3>hsl {colorhsl}</h3>
+      <h3>hsv {colorhsv}</h3>
+      <h3>cmyk {colorcmyk}</h3>
+      <h3>hwb {colorhwb}</h3>
+      <h3>lab {colorlab}</h3>
+
       </div>
-
-      <Helmet>
-
-      <meta property="og:type" content="website"></meta>
-      <meta property="og:url" content="https://linkfork.co/"></meta>
-      <meta property="og:title" content="LinkFork | Link Preview Customization"></meta>
-      <meta property="og:description" content="LinkFork lets you shorten, and customize how your link will appear when shared on social media, for free."></meta>
-      <meta property="og:image" content="https://linkfork.co/images/poster.png"></meta>
-
-      </Helmet>
 
       <ToastContainer
         position="bottom-right"
