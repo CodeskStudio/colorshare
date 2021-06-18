@@ -3,9 +3,12 @@ import './style.css';
 import { InputGroup, Input } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { BiShareAlt } from 'react-icons/bi';
+import { SiConvertio } from 'react-icons/si';
 import { ToastContainer, toast } from 'react-toastify';
+import {Animated} from "react-animated-css";
 import 'react-toastify/dist/ReactToastify.css';
 import converter from 'color-convert';
+import CConverter from './components/CConverter';
 
 const App = () => {
 
@@ -21,7 +24,7 @@ const App = () => {
   const colorcmyk = converter.hex.cmyk(colorhex);
   const colorhwb = converter.hex.hwb(colorhex);
   const colorlab = converter.hex.lab(colorhex);
-  
+
   document.body.style = 'background: ' + color + ';'  
 
   const notify = () => (
@@ -57,15 +60,19 @@ const App = () => {
         <Input type="color" onChange={event => setColor(event.target.value)} pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color}></Input>
         <Input type="text" class="form-control" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color} />
         <Button class="shadow-lg sh-txt" onClick={copyNotify}><BiShareAlt/></Button>
+        <Button class="shadow-lg sh-txt"><SiConvertio/></Button>
       </InputGroup>
-
-      <h2>Color Converter</h2>
-      <h3>rgb {colorrgb}</h3>
-      <h3>hsl {colorhsl}</h3>
-      <h3>hsv {colorhsv}</h3>
-      <h3>cmyk {colorcmyk}</h3>
-      <h3>hwb {colorhwb}</h3>
-      <h3>lab {colorlab}</h3>
+      
+      <Animated animationIn="slideInDown" animationOut="slideOutUp" animationInDuration={1000} animationOutDuration={1000}>
+        <CConverter 
+      rgb={colorrgb}
+      hsl={colorhsl}
+      hsv={colorhsv}
+      cmyk={colorcmyk}
+      hwb={colorhwb}
+      lab={colorlab}
+      />
+      </Animated>
 
       </div>
 
