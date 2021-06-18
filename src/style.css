@@ -13,6 +13,8 @@
       width: 45px;
       float: left;
       height: 45px;
+      background: transparent;
+      border: none;
   }
 
   input[type="text"] {
@@ -21,6 +23,8 @@
       height: 45px;
       display: block;
       float: left;
+      background: transparent;
+      border: none;
       
   }
 
@@ -31,3 +35,71 @@
   .sh-txt{
       text-shadow: 2px 2px #ff0000;
   }
+
+  .isthecenterer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /*btn outline*/
+
+  .btn-outline {
+    color: #4fbfa8;
+    background-color: #ffffff;
+    border-color: #4fbfa8;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+  
+  .btn-outline {
+    color: #4fbfa8;
+    background-color: #ffffff;
+    border-color: #4fbfa8;
+    font-weight: bold;
+    border-radius: 0;
+  }
+  
+  .btn-outline:hover,
+  .btn-outline:active,
+  .btn-outline:focus,
+  .btn-outline.active {
+    background: #4fbfa8;
+    color: #ffffff;
+    border-color: #4fbfa8;
+    
+  }
+
+  /* input */
+
+  .ipt-outline {
+    color: #4fbfa8;
+    background-color: #ffffff;
+    border-color: #4fbfa8;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+  
+  .ipt-outline {
+    color: #4fbfa8;
+    background-color: #ffffff;
+    border-color: #4fbfa8;
+    font-weight: bold;
+    border-radius: 0;
+  }
+  
+  .ipt-outline:hover,
+  .ipt-outline:active,
+  .ipt-outline:focus,
+  .ipt-outline.active {
+    background: #4fbfa8;
+    color: #ffffff;
+    border-color: #4fbfa8;
+    
+  }
+
+  .brsmall {
+    display: block;
+    margin-bottom: 1em;
+}

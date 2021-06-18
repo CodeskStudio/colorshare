@@ -55,14 +55,15 @@ const App = () => {
 
         <h1 class="text-white shadow-lg sh-txt">{color}</h1>  
         <ColorName />
-
+      <div class="text-white shadow-lg sh-txt">
       <InputGroup>
-        <Input type="color" onChange={event => setColor(event.target.value)} pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color}></Input>
-        <Input type="text" class="form-control" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color} />
-        <Button class="shadow-lg sh-txt" onClick={copyNotify}><BiShareAlt/></Button>
-        <Button class="shadow-lg sh-txt"><SiConvertio/></Button>
+        <Input class="ipt-outline" type="color" onChange={event => setColor(event.target.value)} pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color}></Input>
+        <input type="text" class="form-control ipt-outline" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value={color} />
+        <button class="btn btn-outline shadow-lg sh-txt" onClick={copyNotify}><BiShareAlt/></button>
+        <button class="btn btn-outline shadow-lg sh-txt"><SiConvertio/></button>
       </InputGroup>
-      
+      </div>
+      <span class="brsmall"></span>
       <Animated animationIn="slideInDown" animationOut="slideOutUp" animationInDuration={1000} animationOutDuration={1000}>
         <CConverter 
       rgb={colorrgb}
